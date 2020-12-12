@@ -1,11 +1,13 @@
 section .data
     hello:      db      "Hello, world!", 10
     hello.len:  equ     $ - hello
+    counter:    db      00h
 
 section .text
     global _start 
 
 _start:
+    mov ecx, counter
     mov eax, 4           ; 'write' system call = 4
     mov ebx, 1           ; file descriptor 1 = STDOUT
     mov ecx, hello       ; string to write
