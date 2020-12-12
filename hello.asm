@@ -1,12 +1,13 @@
 section .data
     hello:      db      "Hello, world!", 10
     hello.len:  equ     $ - hello
-    counter:    dd      10h
+    counter:    dd      10
 
 section .text
     global _main
 
 _main:
+loop:
     mov eax, 4                 ; 'write' system call = 4
     mov ebx, 1                 ; file descriptor 1 = STDOUT
     mov ecx, hello             ; string to write
@@ -15,8 +16,9 @@ _main:
     mov ecx, [counter]         ; moves the counter to ECX
     dec ecx                    ; decrements ECX by one
     mov [counter], ecx         ; re-stores the ECX back to memory
-    jnz _main                  ; jumps in case the counter is not yet zero
+    jnz loop                   ; jumps in case the counter is not yet zero
 
+exit:
     mov eax, 1                 ; 'exit' system call
     mov ebx, 0                 ; exit with error code 0
     int 80h                    ; call the kernel (syscall) using 0x80 interrupt

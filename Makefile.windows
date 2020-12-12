@@ -1,0 +1,8 @@
+hello.exe: hello.obj
+	gcc.exe -m64 -Wl,-subsystem,console hello.obj -o hello.exe 
+
+hello.obj: hello-windows.asm
+	nasm -f win64 hello-windows.asm -o hello.obj
+
+clean:
+	rm -f hello.obj hello.exe
