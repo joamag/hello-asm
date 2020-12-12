@@ -1,8 +1,8 @@
 hello: hello.o
 	ld hello.o -static -macosx_version_min 10.12 -lSystem -o hello
 
-hello.o: hello.asm
-	nasm -f macho64 hello.asm -o hello.o
+hello.o: hello-mac.asm
+	nasm -f macho64 hello-mac.asm -o hello.o
 
 clean:
 	rm -f hello.o hello
