@@ -4,9 +4,9 @@ section .data
     counter:    dd      10h
 
 section .text
-    global _start
+    global _main
 
-_start:
+_main:
     mov eax, 4                 ; 'write' system call = 4
     mov ebx, 1                 ; file descriptor 1 = STDOUT
     mov ecx, hello             ; string to write
@@ -15,7 +15,7 @@ _start:
     mov ecx, [counter]         ; moves the counter to ECX
     dec ecx                    ; decrements ECX by one
     mov [counter], ecx         ; re-stores the ECX back to memory
-    jnz _start                 ; jumps in case the counter is not yet zero
+    jnz _main                  ; jumps in case the counter is not yet zero
 
     mov eax, 1                 ; 'exit' system call
     mov ebx, 0                 ; exit with error code 0
