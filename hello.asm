@@ -1,7 +1,7 @@
 section .data
     hello:      db      "Hello, world!", 10
     hello.len:  equ     $ - hello
-    counter:    db      10h
+    counter:    dd      10h
 
 section .text
     global _start 
