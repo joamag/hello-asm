@@ -7,6 +7,7 @@ section .text
     global _main
 
 _main:
+
 loop:
     mov eax, 4                 ; 'write' system call = 4
     mov ebx, 1                 ; file descriptor 1 = STDOUT
