@@ -10,7 +10,8 @@ main:
     sub rsp, 40 
 
 loop:
-    mov rcx, hello             ; sets the hello string pointer as first argument (uses 64 bit calling convetion)
+    mov rcx, hello             ; sets the hello string pointer as first argument (uses 64 bit __fastcall calling convetion)
+                               ; for more information check https://en.wikipedia.org/wiki/X86_calling_conventions
     call printf                ; calls the 'printf' function
     mov ecx, [counter]         ; moves the counter to ECX
     dec ecx                    ; decrements ECX by one
