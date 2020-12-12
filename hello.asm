@@ -14,7 +14,7 @@ _start:
     int 80h              ; call the kernel (syscall) using 0x80 interrupt
     mov ecx, counter     ; moves the counter to ECX
     dec ecx              ; decrements ECX by one
-    mov counter, ecx     ; re-stores the ECX back to memory
+    mov [counter], ecx   ; re-stores the ECX back to memory
     jnz _start           ; jumps in case the counter is not yet zero
 
     mov eax, 1           ; 'exit' system call
