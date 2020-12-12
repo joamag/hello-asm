@@ -1,6 +1,6 @@
 section .data
     hello:      db      "Hello, world!", 10
-    hello.len:  equ     $ - msg
+    hello.len:  equ     $ - hello
 
 section .text
     global _start
