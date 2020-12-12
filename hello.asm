@@ -4,7 +4,7 @@ section .data
     counter:    dd      10h
 
 section .text
-    global _start 
+    global _start
 
 _start:
     mov eax, 4           ; 'write' system call = 4
