@@ -7,7 +7,7 @@ section .text
     extern printf
 
 main:
-    sub rsp, 40 
+    sub rsp, 40
 
 loop:
     mov rcx, hello             ; sets the hello string pointer as first argument (uses 64 bit __fastcall calling convention)
