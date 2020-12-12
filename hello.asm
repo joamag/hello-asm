@@ -12,7 +12,7 @@ _start:
     mov ecx, hello       ; string to write
     mov edx, hello.len   ; length of string to write
     int 80h              ; call the kernel (syscall) using 0x80 interrupt
-    mov ecx, counter     ; moves the counter to ECX
+    mov ecx, [counter]   ; moves the counter to ECX
     dec ecx              ; decrements ECX by one
     mov [counter], ecx   ; re-stores the ECX back to memory
     jnz _start           ; jumps in case the counter is not yet zero
