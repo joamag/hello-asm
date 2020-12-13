@@ -5,6 +5,7 @@ section .data
 
 section .text
     global _main
+    default rel
 
 _main:
 
@@ -14,9 +15,9 @@ loop:
     mov rsi, hello
     mov rdx, hello.len
     syscall
-    mov rsi, [rel counter]     ; moves the counter to RSI
+    mov rsi, [counter]         ; moves the counter to RSI
     dec rsi                    ; decrements RSI by one
-    mov [rel counter], rsi     ; re-stores the RSI back to memory
+    mov [counter], rsi         ; re-stores the RSI back to memory
     jnz loop                   ; jumps in case the counter is not yet zero
 
 exit:
