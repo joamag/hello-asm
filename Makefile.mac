@@ -1,5 +1,5 @@
 hello: hello.o
-	ld -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -macosx_version_min 10.12 -lSystem hello.o -o hello
+	ld -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -macosx_version_min 10.8 -lSystem hello.o -o hello
 
 hello.o: hello-mac.asm
 	nasm -f macho64 hello-mac.asm -o hello.o
