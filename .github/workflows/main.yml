@@ -34,6 +34,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Build & Install Dependencies
+        run: |
+          brew install nasm
       - name: Build Hello ASM
         run: |
           make -f Makefile.mac
