@@ -37,8 +37,7 @@ jobs:
           make -f Makefile.windows
       - name: Test Hello ASM
         run: |
-          dir
-          hello
+          ./hello
   build-macos:
     name: Build macOS
     runs-on: macos-latest
