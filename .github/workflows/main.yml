@@ -28,6 +28,8 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
       - name: Build & Install Dependencies
         run: |
+          Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
           scoop install make nasm
       - name: Build Hello ASM
         run: |
