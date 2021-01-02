@@ -1,0 +1,42 @@
+name: Main Workflow
+on: [push]
+jobs:
+  build-linux:
+    name: Build Linux
+    strategy:
+      matrix:
+        gcc-version: [5, 6, 7, 8, 9]
+    runs-on: ubuntu-latest
+    container: gcc:${{ matrix.gcc-version }}
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Hello ASM
+        run: |
+          make
+      - name: Test Hello ASM
+        run: |
+          ./hello
+  build-windows:
+    name: Build Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup msbuild
+        uses: microsoft/setup-msbuild@v1.0.2
+      - name: Build Hello ASM
+        run: |
+          make -f Makefile.windows
+      - name: Test Hello ASM
+        run: |
+          hello
+  build-macos:
+    name: Build macOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Hello ASM
+        run: |
+          make -f Makefile.mac
+      - name: Test Hello ASM
+        run: |
+          ./hello
