@@ -33,7 +33,7 @@ jobs:
           scoop install make nasm
       - name: Build Hello ASM
         run: |
-          set PATH=%PATH%;%USERPROFILE%\scoop\apps\nasm\current
+          $env:PATH += ";$env:USERPROFILE\scoop\apps\nasm\current"
           make -f Makefile.windows
       - name: Test Hello ASM
         run: |
