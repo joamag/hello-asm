@@ -31,7 +31,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Build & Install Dependencies
         run: |
-          irm get.scoop.sh | iex
+          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
           scoop install make nasm
       - name: Build Hello ASM
         run: |
