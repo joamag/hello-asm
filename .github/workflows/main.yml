@@ -8,7 +8,16 @@ jobs:
     name: Build Linux
     strategy:
       matrix:
-        gcc-version: [7, 8, "9-bullseye", "10-bullseye", "11-bullseye", "12-bullseye"]
+        gcc-version: [
+          7,
+          8,
+          "9-bullseye",
+          "10-bullseye",
+          "11-bullseye",
+          "12-bullseye",
+          "13-bullseye",
+          "14-bullseye"
+        ]
     runs-on: ubuntu-latest
     container: gcc:${{ matrix.gcc-version }}
     steps:
