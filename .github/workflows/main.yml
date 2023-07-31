@@ -42,7 +42,7 @@ jobs:
         uses: Cyberboss/install-winget@v1
       - name: Build & Install Dependencies
         run: |
-          winget install gnuwin32.make nasm
+          winget install --accept-package-agreements gnuwin32.make nasm
       - name: Build Hello ASM
         run: |
           $env:PATH += ";$env:USERPROFILE\scoop\apps\nasm\current"
