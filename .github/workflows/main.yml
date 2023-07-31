@@ -43,6 +43,7 @@ jobs:
       - name: Build & Install Dependencies
         run: |
           winget install --accept-package-agreements --accept-source-agreements gnuwin32.make nasm
+          setx PATH "%PATH;C:\Program Files\NASM\"
       - name: Build Hello ASM
         run: |
           $env:PATH += ";$env:USERPROFILE\scoop\apps\nasm\current"
