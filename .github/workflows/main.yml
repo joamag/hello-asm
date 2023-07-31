@@ -40,9 +40,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Build & Install Dependencies
         run: |
-          iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
-          scoop update
-          scoop install make nasm
+          winget install make nasm
       - name: Build Hello ASM
         run: |
           $env:PATH += ";$env:USERPROFILE\scoop\apps\nasm\current"
