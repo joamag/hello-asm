@@ -20,7 +20,7 @@ jobs:
     container: gcc:${{ matrix.gcc-version }}
     steps:
       - name: Checkout code from repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build & Install Dependencies
         run: |
           apt-get update && apt-get install -y -q nasm
@@ -35,7 +35,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout code from repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup msbuild
         uses: microsoft/setup-msbuild@v1.1
       - name: Setup winget
@@ -55,7 +55,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout code from repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Build & Install Dependencies
         run: |
           brew install make nasm
