@@ -50,9 +50,9 @@ jobs:
       - name: Test Hello ASM
         run: |
           ./hello
-  build-macos:
-    name: Build macOS
-    runs-on: macos-latest
+  build-macos-legacy:
+    name: Build MacOS Legacy
+    runs-on: macos-13
     steps:
       - name: Checkout code from repository
         uses: actions/checkout@v4
