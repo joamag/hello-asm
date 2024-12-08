@@ -61,7 +61,7 @@ jobs:
           brew install make nasm
       - name: Build Hello ASM
         run: |
-          make -f Makefile.mac
+          make -f Makefile.mac-arm
       - name: Test Hello ASM
         run: |
           ./hello
