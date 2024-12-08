@@ -1,8 +1,0 @@
-hello: hello.o
-	ld -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib -macos_version_min 10.8 -lSystem hello.o -o hello
-
-hello.o: hello-mac.asm
-	nasm hello-mac.asm -o hello.o
-
-clean:
-	rm -f hello.o hello
