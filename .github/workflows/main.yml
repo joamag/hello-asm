@@ -52,7 +52,7 @@ jobs:
           ./hello
   build-macos-legacy:
     name: Build MacOS Legacy
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: Checkout code from repository
         uses: actions/checkout@v4
