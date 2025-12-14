@@ -12,7 +12,7 @@ _main:
 loop:
     mov rax, 0x2000004         ; 'write' system call
     mov rdi, 1                 ; file descriptor 1 = STDOUT
-    mov rsi, hello
+    lea rsi, [hello] 
     mov rdx, hello.len
     syscall
     mov rsi, [counter]         ; moves the counter to RSI
